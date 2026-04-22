@@ -1,0 +1,1795 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialektos — Центр вивчення німецької мови</title>
+    <meta
+      name="description"
+      content="Онлайн-курси німецької мови для тих, хто живе або планує переїхати до Німеччини. Індивідуальні уроки, підготовка до MSA та Abitur, вступ до університету."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: {
+                DEFAULT: '#1800ad',
+                dark: '#12007d',
+                soft: '#eeebff',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          130deg,
+          #1800ad 0%,
+          #6b44ff 60%,
+          #a78bfa 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-bg {
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 70% -10%,
+            rgba(24, 0, 173, 0.07) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 60% 50% at -5% 80%,
+            rgba(24, 0, 173, 0.05) 0%,
+            transparent 55%
+          ),
+          #ffffff;
+      }
+
+      .card-hover {
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 24px 64px rgba(24, 0, 173, 0.11);
+      }
+
+      .accent-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        background: #eeebff;
+        color: #1800ad;
+      }
+
+      .check-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        color: #1800ad;
+      }
+
+      .star {
+        width: 16px;
+        height: 16px;
+        color: #fbbf24;
+        fill: currentColor;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 28px;
+        background: #1800ad;
+        color: #fff;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(24, 0, 173, 0.3);
+        transition:
+          background 0.18s,
+          box-shadow 0.18s,
+          transform 0.15s;
+        text-decoration: none;
+      }
+      .btn-primary:hover {
+        background: #12007d;
+        box-shadow: 0 8px 32px rgba(24, 0, 173, 0.38);
+        transform: translateY(-1px);
+      }
+
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 22px;
+        background: transparent;
+        color: #374151;
+        font-weight: 600;
+        font-size: 14px;
+        border-radius: 12px;
+        border: 1.5px solid #e5e7eb;
+        transition:
+          border-color 0.15s,
+          background 0.15s;
+        text-decoration: none;
+      }
+      .btn-ghost:hover {
+        border-color: #d1d5db;
+        background: #f9fafb;
+      }
+
+      .course-card-featured {
+        background: linear-gradient(
+          145deg,
+          #1800ad 0%,
+          #2e1fd8 60%,
+          #1800ad 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .course-card-featured::before {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 180px;
+        height: 180px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+      }
+      .course-card-featured::after {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        width: 120px;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 50%;
+      }
+
+      .cta-section {
+        background: linear-gradient(
+          140deg,
+          #1800ad 0%,
+          #2d1fd6 40%,
+          #1a00b8 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -80px;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 50%;
+      }
+      .cta-section::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -60px;
+        width: 280px;
+        height: 280px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 50%;
+      }
+
+      .process-connector-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .process-connector {
+        position: relative;
+      }
+      .process-connector:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 23px;
+        left: calc(50% + 24px);
+        width: calc(100% - 24px);
+        height: 2px;
+        background: #1800ad;
+      }
+
+      @media (max-width: 1023px) {
+        .process-connector::after {
+          display: none;
+        }
+      }
+
+      .nav-link {
+        font-size: 14px;
+        color: #6b7280;
+        transition: color 0.15s;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .nav-link:hover {
+        color: #111827;
+      }
+    </style>
+  </head>
+  <body class="text-gray-900 antialiased">
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100/80"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-lg flex items-center justify-center"
+              style="background: #1800ad"
+            >
+              <span class="text-white font-black text-sm">D</span>
+            </div>
+            <span
+              class="font-black text-xl tracking-tight"
+              style="color: #1800ad"
+              >Dialektos</span
+            >
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#about" class="nav-link">Про нас</a>
+            <a href="#courses" class="nav-link">Курси</a>
+            <a href="#programs" class="nav-link">Програми</a>
+            <a href="#process" class="nav-link">Як почати</a>
+          </div>
+
+          <div class="hidden md:flex items-center gap-3">
+            <a
+              href="#cta"
+              class="btn-primary"
+              style="
+                padding: 10px 20px;
+                font-size: 14px;
+                border-radius: 10px;
+                box-shadow: none;
+              "
+            >
+              Записатися
+            </a>
+          </div>
+
+          <button
+            id="burger"
+            class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            aria-label="Меню"
+          >
+            <svg
+              id="burger-open"
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              id="burger-close"
+              class="w-5 h-5 hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-100"
+      >
+        <div class="max-w-6xl mx-auto px-4 py-4 space-y-1">
+          <a
+            href="#about"
+            class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+            >Про нас</a
+          >
+          <a
+            href="#courses"
+            class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+            >Курси</a
+          >
+          <a
+            href="#programs"
+            class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+            >Програми</a
+          >
+          <a
+            href="#process"
+            class="block px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+            >Як почати</a
+          >
+          <div class="pt-2">
+            <a
+              href="#cta"
+              class="btn-primary w-full"
+              style="border-radius: 10px"
+              >Записатися безкоштовно</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero-bg pt-28 pb-20 lg:pt-36 lg:pb-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <div class="accent-pill mb-7">
+            <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 8 8">
+              <circle cx="4" cy="4" r="4" />
+            </svg>
+            Новий набір у групи відкрито
+          </div>
+
+          <h1
+            class="text-5xl sm:text-6xl lg:text-[72px] font-black tracking-tight leading-[1.04] mb-7"
+          >
+            Вивчайте<br />
+            <span class="gradient-text">німецьку</span><br />
+            для нового<br />
+            <span style="color: #1800ad">життя</span>
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl text-gray-500 leading-relaxed mb-8 max-w-lg"
+          >
+            Онлайн-курси для тих, хто переїхав або планує переїхати до Німеччини
+            — від нуля до вільного спілкування.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 mb-10">
+            <a href="#cta" class="btn-primary">
+              Безкоштовне пробне заняття
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              class="btn-ghost"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              Instagram
+            </a>
+            <a
+              href="https://t.me"
+              target="_blank"
+              rel="noopener"
+              class="btn-ghost"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                />
+              </svg>
+              Telegram
+            </a>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-5 h-5 rounded-full flex items-center justify-center"
+                style="background: #eeebff"
+              >
+                <svg
+                  class="w-3 h-3"
+                  style="color: #1800ad"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span class="text-sm text-gray-500"
+                >Індивідуальні та парні уроки</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-5 h-5 rounded-full flex items-center justify-center"
+                style="background: #eeebff"
+              >
+                <svg
+                  class="w-3 h-3"
+                  style="color: #1800ad"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span class="text-sm text-gray-500"
+                >Підготовка до MSA та Abitur</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-5 h-5 rounded-full flex items-center justify-center"
+                style="background: #eeebff"
+              >
+                <svg
+                  class="w-3 h-3"
+                  style="color: #1800ad"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span class="text-sm text-gray-500"
+                >Допомога зі вступом до університету</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ STATS BAR ═══════════════ -->
+    <section class="py-12 border-y border-gray-100 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-gray-100"
+        >
+          <div class="text-center lg:px-8">
+            <div
+              class="text-3xl sm:text-4xl font-black mb-1"
+              style="color: #1800ad"
+            >
+              4+
+            </div>
+            <div class="text-sm text-gray-500 font-medium">роки викладання</div>
+          </div>
+          <div class="text-center lg:px-8">
+            <div
+              class="text-3xl sm:text-4xl font-black mb-1"
+              style="color: #1800ad"
+            >
+              A1–C1
+            </div>
+            <div class="text-sm text-gray-500 font-medium">всі рівні мови</div>
+          </div>
+          <div class="text-center lg:px-8">
+            <div
+              class="text-3xl sm:text-4xl font-black mb-1"
+              style="color: #1800ad"
+            >
+              100%
+            </div>
+            <div class="text-sm text-gray-500 font-medium">онлайн формат</div>
+          </div>
+          <div class="text-center lg:px-8">
+            <div
+              class="text-3xl sm:text-4xl font-black mb-1"
+              style="color: #1800ad"
+            >
+              MSA/Abitur
+            </div>
+            <div class="text-sm text-gray-500 font-medium">
+              підготовка до іспитів
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <section id="about" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <div class="accent-pill mb-6">01 — Про нас</div>
+            <h2
+              class="text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] mb-6"
+            >
+              Ми самі пройшли<br />цей шлях
+            </h2>
+            <p class="text-gray-500 text-lg leading-relaxed mb-6">
+              <strong class="text-gray-900">Даша та Кай</strong> — засновники
+              Dialektos. Ми переїхали до Німеччини і на власному досвіді знаємо,
+              як важливо мати підтримку в новій країні.
+            </p>
+            <p class="text-gray-500 leading-relaxed mb-8">
+              Ми знаємо, як важко починати все з нуля — нова мова, нова система
+              освіти, нові правила. Тому Dialektos — це не просто школа мови, а
+              підтримка на шляху адаптації.
+            </p>
+
+            <div class="space-y-3.5 mb-8">
+              <div class="flex items-start gap-3">
+                <svg
+                  class="check-icon mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-gray-600"
+                  >Досвід переїзду та адаптації в Німеччині</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="check-icon mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-gray-600"
+                  >Сучасні методики + реальна розмовна практика</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="check-icon mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-gray-600"
+                  >Допомога не лише з мовою, а й з адаптацією</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="check-icon mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-gray-600"
+                  >Підготовка до MSA, Abitur та вступу в університет</span
+                >
+              </div>
+            </div>
+
+            <a
+              href="#cta"
+              class="inline-flex items-center gap-1.5 text-sm font-semibold"
+              style="color: #1800ad"
+            >
+              Записатися на пробне заняття
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <div
+              class="rounded-2xl h-52 flex items-center justify-center"
+              style="
+                background: linear-gradient(135deg, #eeebff 0%, #ddd7ff 100%);
+              "
+            >
+              <div class="text-center">
+                <div class="flex gap-3 justify-center mb-4">
+                  <div
+                    class="w-14 h-14 rounded-full bg-white/60 flex items-center justify-center text-xl font-black"
+                    style="color: #1800ad"
+                  >
+                    Д
+                  </div>
+                  <div
+                    class="w-14 h-14 rounded-full bg-white/60 flex items-center justify-center text-xl font-black"
+                    style="color: #1800ad"
+                  >
+                    К
+                  </div>
+                </div>
+                <p class="text-sm font-semibold" style="color: #1800ad">
+                  Даша та Кай
+                </p>
+                <p class="text-xs text-gray-500 mt-1">Засновники Dialektos</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div
+                class="rounded-xl p-4 text-center"
+                style="background: #eeebff"
+              >
+                <div class="text-2xl font-black" style="color: #1800ad">4+</div>
+                <div class="text-xs text-gray-500 mt-1 font-medium">
+                  роки роботи
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 text-center"
+                style="background: #eeebff"
+              >
+                <div class="text-2xl font-black" style="color: #1800ad">
+                  A1–C1
+                </div>
+                <div class="text-xs text-gray-500 mt-1 font-medium">
+                  всі рівні
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 text-center"
+                style="background: #eeebff"
+              >
+                <div class="text-2xl font-black" style="color: #1800ad">
+                  100%
+                </div>
+                <div class="text-xs text-gray-500 mt-1 font-medium">онлайн</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ BENEFITS ═══════════════ -->
+    <section id="benefits" class="py-20 lg:py-28 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="accent-pill mb-6">Чому Dialektos</div>
+          <h2
+            class="text-4xl lg:text-5xl font-black tracking-tight leading-tight"
+          >
+            Не просто уроки —<br />підтримка на кожному кроці
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="bg-white rounded-2xl p-6 card-hover">
+            <div
+              class="w-10 h-10 rounded-xl mb-4 flex items-center justify-center"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold mb-2">
+              Викладачі з досвідом у Німеччині
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Наші викладачі самі жили та навчались у Німеччині. Вони знають
+              реальні виклики та допоможуть уникнути типових помилок.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 card-hover">
+            <div
+              class="w-10 h-10 rounded-xl mb-4 flex items-center justify-center"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold mb-2">Розмовна практика щоуроку</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Кожне заняття — жива розмовна практика. Ви навчаєтеся говорити, а
+              не лише читати підручник.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 card-hover">
+            <div
+              class="w-10 h-10 rounded-xl mb-4 flex items-center justify-center"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold mb-2">Індивідуальний підхід</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Програма адаптується під ваш рівень, цілі та темп навчання. Жодних
+              стандартних шаблонів.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 card-hover">
+            <div
+              class="w-10 h-10 rounded-xl mb-4 flex items-center justify-center"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold mb-2">
+              Підготовка до MSA та Abitur
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Цілеспрямована підготовка до найважливіших шкільних іспитів
+              Німеччини з реальними завданнями.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 card-hover">
+            <div
+              class="w-10 h-10 rounded-xl mb-4 flex items-center justify-center"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold mb-2">Допомога зі вступом</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Підготуємо до вступу в університет або Ausbildung, допоможемо з
+              документами та мовою.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 card-hover">
+            <div
+              class="w-10 h-10 rounded-xl mb-4 flex items-center justify-center"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold mb-2">Зручний онлайн формат</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Навчайтеся будь-де та в зручний час. Все, що потрібно — стабільний
+              інтернет та бажання вчитися.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ COURSES ═══════════════ -->
+    <section id="courses" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="accent-pill mb-6">Курси</div>
+          <h2
+            class="text-4xl lg:text-5xl font-black tracking-tight leading-tight"
+          >
+            Оберіть свій формат
+          </h2>
+          <p class="text-gray-500 mt-4 text-lg">
+            Знайдіть ідеальний варіант навчання для ваших цілей і темпу
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-5">
+          <!-- Pair -->
+          <div
+            class="rounded-2xl border border-gray-100 p-7 card-hover flex flex-col"
+          >
+            <div class="accent-pill self-start mb-5">Парне навчання</div>
+            <h3 class="text-xl font-bold mb-2">Навчання в парі</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              Ідеальний баланс між індивідуальним підходом і груповою динамікою.
+              Більше практики, взаємна мотивація.
+            </p>
+            <ul class="space-y-2.5 mb-6 flex-1">
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Більше розмовної практики
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Комфортна атмосфера
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Знижка 15% при записі друга
+              </li>
+            </ul>
+            <div class="pt-5 border-t border-gray-100">
+              <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-gray-400">A1–B1 · 60 хв</span>
+                  <span class="font-bold text-gray-900">375 грн</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-gray-400">B2 · 60 хв</span>
+                  <span class="font-bold text-gray-900">505 грн</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Individual — featured -->
+          <div
+            class="course-card-featured rounded-2xl p-7 card-hover flex flex-col"
+            style="box-shadow: 0 16px 48px rgba(24, 0, 173, 0.25)"
+          >
+            <div
+              class="inline-flex items-center gap-1.5 self-start mb-5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/20 text-white"
+            >
+              <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 8 8">
+                <circle cx="4" cy="4" r="4" />
+              </svg>
+              Популярний вибір
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-white">
+              Індивідуальні уроки
+            </h3>
+            <p class="text-white/65 text-sm leading-relaxed mb-5">
+              Максимальний прогрес у власному темпі. Повна увага викладача
+              тільки для вас.
+            </p>
+            <ul class="space-y-2.5 mb-6 flex-1">
+              <li class="flex items-center gap-2.5 text-sm text-white/85">
+                <svg
+                  class="check-icon text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Навчання у власному темпі
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-white/85">
+                <svg
+                  class="check-icon text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Фокус на конкретних темах
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-white/85">
+                <svg
+                  class="check-icon text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Знижка 10% при повній оплаті
+              </li>
+            </ul>
+            <div class="pt-5 border-t border-white/15 relative z-10">
+              <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-white/55">A1–B1 · 60 хв</span>
+                  <span class="font-bold text-white">585 грн</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-white/55">B2 · 60 хв</span>
+                  <span class="font-bold text-white">735 грн</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-white/55">C1 · 45 хв</span>
+                  <span class="font-bold text-white">850 грн</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Booster -->
+          <div
+            class="rounded-2xl border border-gray-100 p-7 card-hover flex flex-col"
+          >
+            <div class="accent-pill self-start mb-5">Інтенсив</div>
+            <h3 class="text-xl font-bold mb-2">Booster курс</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              Короткі інтенсивні заняття для швидкого результату. Ідеально перед
+              тестом або іспитом.
+            </p>
+            <ul class="space-y-2.5 mb-6 flex-1">
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Швидке підтягнення мови
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Підготовка до конкретного тесту
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Мінімальний пакет — 10 уроків
+              </li>
+            </ul>
+            <div class="pt-5 border-t border-gray-100">
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-400">30 хв · урок</span>
+                <span class="font-bold text-gray-900">388 грн</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="#cta" class="btn-primary inline-flex">
+            Записатися на безкоштовне пробне
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PROGRAMS ═══════════════ -->
+    <section id="programs" class="py-20 lg:py-28 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="accent-pill mb-6">Програми</div>
+          <h2
+            class="text-4xl lg:text-5xl font-black tracking-tight leading-tight"
+          >
+            Спеціалізовані програми
+          </h2>
+          <p class="text-gray-500 mt-4 text-lg">
+            Для тих, у кого є конкретна мета
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <!-- University -->
+          <div class="bg-white rounded-2xl p-8 card-hover flex flex-col">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-6 h-6"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Підготовка до університету</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              Комплексна програма для вступу до університету або Ausbildung у
+              Німеччині.
+            </p>
+            <ul class="space-y-2 mb-auto flex-1">
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Підготовка до вступних іспитів
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Підняття мови до потрібного рівня
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Допомога з оформленням документів
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Вся інформація про процес вступу
+              </li>
+            </ul>
+            <div
+              class="flex items-center justify-between mt-6 pt-5 border-t border-gray-100"
+            >
+              <div>
+                <span class="text-2xl font-black" style="color: #1800ad"
+                  >971 грн</span
+                >
+                <span class="text-sm text-gray-400 ml-1">/ 60 хв</span>
+              </div>
+              <a
+                href="#cta"
+                class="text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+                style="background: #eeebff; color: #1800ad"
+                >Записатися</a
+              >
+            </div>
+          </div>
+
+          <!-- School -->
+          <div class="bg-white rounded-2xl p-8 card-hover flex flex-col">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+              style="background: #eeebff"
+            >
+              <svg
+                class="w-6 h-6"
+                style="color: #1800ad"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Підтримка в школі</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              Для дітей, яким складно навчатися у німецькій школі. Адаптація та
+              впевненість на уроках.
+            </p>
+            <ul class="space-y-2 mb-auto flex-1">
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Пояснення складних тем просто
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Допомога з домашніми завданнями
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Підготовка до контрольних, MSA та Abitur
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-600">
+                <div
+                  class="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style="background: #1800ad"
+                ></div>
+                Впевненість у спілкуванні
+              </li>
+            </ul>
+            <div
+              class="flex items-center justify-between mt-6 pt-5 border-t border-gray-100"
+            >
+              <div>
+                <span class="text-2xl font-black" style="color: #1800ad"
+                  >840 грн</span
+                >
+                <span class="text-sm text-gray-400 ml-1">/ 60 хв</span>
+              </div>
+              <a
+                href="#cta"
+                class="text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+                style="background: #eeebff; color: #1800ad"
+                >Записатися</a
+              >
+            </div>
+          </div>
+
+          <!-- Professional German — full width -->
+          <div class="bg-white rounded-2xl p-8 card-hover md:col-span-2">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style="background: #eeebff"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    style="color: #1800ad"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Профільна німецька</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Спеціалізований курс для бізнесу, академічної та корпоративної
+                  сфери. Академічне письмо, презентації, семінари.
+                </p>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <div>
+                    <span class="text-2xl font-black" style="color: #1800ad"
+                      >989 грн</span
+                    >
+                    <span class="text-sm text-gray-400 ml-1">/ 60 хв</span>
+                  </div>
+                  <span
+                    class="text-xs px-2.5 py-1 rounded-full bg-gray-100 text-gray-500 font-medium"
+                    >Мін. 4 заняття · 2× на тиждень</span
+                  >
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-xl p-3.5" style="background: #f8f7ff">
+                  <div
+                    class="text-xs font-semibold mb-1.5"
+                    style="color: #1800ad"
+                  >
+                    Сфери
+                  </div>
+                  <p class="text-xs text-gray-500 leading-relaxed">
+                    Бізнес, офіс, держ. установи
+                  </p>
+                </div>
+                <div class="rounded-xl p-3.5" style="background: #f8f7ff">
+                  <div
+                    class="text-xs font-semibold mb-1.5"
+                    style="color: #1800ad"
+                  >
+                    Академічне письмо
+                  </div>
+                  <p class="text-xs text-gray-500 leading-relaxed">
+                    Есе, реферати, наукові тексти
+                  </p>
+                </div>
+                <div class="rounded-xl p-3.5" style="background: #f8f7ff">
+                  <div
+                    class="text-xs font-semibold mb-1.5"
+                    style="color: #1800ad"
+                  >
+                    Виступи
+                  </div>
+                  <p class="text-xs text-gray-500 leading-relaxed">
+                    Презентації, семінари, дискусії
+                  </p>
+                </div>
+                <div class="rounded-xl p-3.5" style="background: #f8f7ff">
+                  <div
+                    class="text-xs font-semibold mb-1.5"
+                    style="color: #1800ad"
+                  >
+                    Конференції
+                  </div>
+                  <p class="text-xs text-gray-500 leading-relaxed">
+                    Практика публічного виступу
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PROCESS ═══════════════ -->
+    <section id="process" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="accent-pill mb-6">Як починається навчання</div>
+          <h2
+            class="text-4xl lg:text-5xl font-black tracking-tight leading-tight"
+          >
+            Простий старт<br />за 4 кроки
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div class="process-connector process-connector-item">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white font-black text-lg"
+              style="background: #1800ad"
+            >
+              1
+            </div>
+            <h3 class="font-bold mb-2">Запис</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Залишаєте заявку або пишете нам у Telegram чи Instagram
+            </p>
+          </div>
+
+          <div class="process-connector process-connector-item">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white font-black text-lg"
+              style="background: #1800ad"
+            >
+              2
+            </div>
+            <h3 class="font-bold mb-2">Пробне заняття</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              35–40 хв з викладачем: визначення рівня, обговорення цілей і
+              питань
+            </p>
+          </div>
+
+          <div class="process-connector process-connector-item">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white font-black text-lg"
+              style="background: #1800ad"
+            >
+              3
+            </div>
+            <h3 class="font-bold mb-2">Вибір програми</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Підбираємо курс, формат і графік занять, який підходить саме вам
+            </p>
+          </div>
+
+          <div class="process-connector-item">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-white font-black text-lg"
+              style="background: #1800ad"
+            >
+              4
+            </div>
+            <h3 class="font-bold mb-2">Починаємо!</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Стартуємо навчання — ми підтримуємо вас на кожному кроці
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="rounded-2xl p-8 text-center"
+          style="background: linear-gradient(135deg, #eeebff 0%, #e0daff 100%)"
+        >
+          <p class="text-lg font-bold mb-1" style="color: #1800ad">
+            Після пробного заняття ви самі вирішуєте, чи хочете продовжувати
+          </p>
+          <p class="text-sm text-gray-500">
+            Жодних зобов'язань. Жодного тиску. Перше заняття — безкоштовно.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+    <section id="testimonials" class="py-20 lg:py-28 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="accent-pill mb-6">Відгуки</div>
+          <h2
+            class="text-4xl lg:text-5xl font-black tracking-tight leading-tight"
+          >
+            Що кажуть наші студенти
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="bg-white rounded-2xl p-6 flex flex-col">
+            <div class="flex gap-0.5 mb-4">
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
+              "Завдяки Dialektos я підготувалася до Abitur набагато краще, ніж
+              очікувала. Викладач пояснював все зрозуміло, а практика допомогла
+              говорити набагато впевненіше."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+                style="background: #1800ad"
+              >
+                А
+              </div>
+              <div>
+                <div class="text-sm font-semibold">Анна</div>
+                <div class="text-xs text-gray-400">Підготовка до Abitur</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 flex flex-col">
+            <div class="flex gap-0.5 mb-4">
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
+              "Після переїзду до Берліна я не знав з чого почати. Dialektos
+              допоміг не лише з мовою, але й з розумінням шкільної системи.
+              Тепер мій син навчається з впевненістю."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+                style="background: #1800ad"
+              >
+                М
+              </div>
+              <div>
+                <div class="text-sm font-semibold">Михайло</div>
+                <div class="text-xs text-gray-400">Підтримка в школі</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 flex flex-col">
+            <div class="flex gap-0.5 mb-4">
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg class="star" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
+              "Готувалась до вступу в TUM. За 3 місяці з Dialektos я підняла
+              рівень і зрозуміла весь процес вступу. Тепер навчаюся в Мюнхені —
+              мрія справдилась!"
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+                style="background: #1800ad"
+              >
+                О
+              </div>
+              <div>
+                <div class="text-sm font-semibold">Ольга</div>
+                <div class="text-xs text-gray-400">
+                  Підготовка до університету
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section id="cta" class="cta-section py-24 lg:py-32">
+      <div
+        class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-8 bg-white/15 text-white/90"
+        >
+          <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 8 8">
+            <circle cx="4" cy="4" r="4" />
+          </svg>
+          Перше заняття — безкоштовно
+        </div>
+
+        <h2
+          class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] mb-6"
+        >
+          Почніть свій шлях<br />
+          до впевненої<br />
+          <span class="text-white/75">німецької сьогодні</span>
+        </h2>
+
+        <p class="text-white/65 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+          Запишіться на безкоштовне пробне заняття. Познайомитесь з викладачем,
+          визначите рівень і підберете курс.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+        >
+          <a
+            href="mailto:info@dialektos.com"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-bold text-base rounded-xl hover:bg-gray-100 transition-all shadow-2xl"
+          >
+            Записатися на пробне заняття
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="flex items-center justify-center gap-8">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-medium"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+            Instagram
+          </a>
+          <div class="w-px h-4 bg-white/20"></div>
+          <a
+            href="https://t.me"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-medium"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+              />
+            </svg>
+            Telegram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="bg-gray-950 py-10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-5"
+        >
+          <a href="#" class="flex items-center gap-2.5">
+            <div
+              class="w-7 h-7 rounded-md flex items-center justify-center"
+              style="background: #1800ad"
+            >
+              <span class="text-white font-black text-xs">D</span>
+            </div>
+            <span class="text-white font-bold text-base">Dialektos</span>
+            <span class="text-gray-600 text-sm"
+              >— центр вивчення німецької мови</span
+            >
+          </a>
+          <nav class="flex items-center gap-6">
+            <a
+              href="#about"
+              class="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+              >Про нас</a
+            >
+            <a
+              href="#courses"
+              class="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+              >Курси</a
+            >
+            <a
+              href="#programs"
+              class="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+              >Програми</a
+            >
+            <a
+              href="#process"
+              class="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+              >Як почати</a
+            >
+          </nav>
+          <p class="text-gray-600 text-sm">© 2025 Dialektos</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const burger = document.getElementById('burger')
+      const mobileMenu = document.getElementById('mobile-menu')
+      const burgerOpen = document.getElementById('burger-open')
+      const burgerClose = document.getElementById('burger-close')
+
+      burger.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden')
+        mobileMenu.classList.toggle('hidden')
+        burgerOpen.classList.toggle('hidden', !isOpen)
+        burgerClose.classList.toggle('hidden', isOpen)
+      })
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden')
+          burgerOpen.classList.remove('hidden')
+          burgerClose.classList.add('hidden')
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -205,6 +205,34 @@ body {
   border-radius: 50%;
 }
 
+[data-price]:empty::before {
+  content: '';
+  display: inline-block;
+  width: 3.5ch;
+  height: 0.8em;
+  vertical-align: -0.05em;
+  border-radius: 4px;
+  background: currentColor;
+  opacity: 0.12;
+  animation: price-skeleton-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes price-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.22;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-price]:empty::before {
+    animation: none;
+  }
+}
+
 .founder-card {
   position: relative;
   display: block;

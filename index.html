@@ -749,11 +749,17 @@
               <div class="space-y-2">
                 <div class="flex justify-between items-center">
                   <span class="text-sm text-gray-400">A1–B1 · 60 хв</span>
-                  <span class="font-bold text-gray-900">375 грн</span>
+                  <span
+                    class="font-bold text-gray-900"
+                    data-price="pair_a1_b1"
+                  ></span>
                 </div>
                 <div class="flex justify-between items-center">
                   <span class="text-sm text-gray-400">B2 · 60 хв</span>
-                  <span class="font-bold text-gray-900">505 грн</span>
+                  <span
+                    class="font-bold text-gray-900"
+                    data-price="pair_b2"
+                  ></span>
                 </div>
               </div>
             </div>
@@ -808,34 +814,29 @@
                 </svg>
                 Фокус на конкретних темах
               </li>
-              <li class="flex items-center gap-2.5 text-sm text-white/85">
-                <svg
-                  class="check-icon text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Знижка 10% при повній оплаті
-              </li>
             </ul>
             <div class="pt-5 border-t border-white/15 relative z-10">
               <div class="space-y-2">
                 <div class="flex justify-between items-center">
                   <span class="text-sm text-white/55">A1–B1 · 60 хв</span>
-                  <span class="font-bold text-white">585 грн</span>
+                  <span
+                    class="font-bold text-white"
+                    data-price="individual_a1_b1"
+                  ></span>
                 </div>
                 <div class="flex justify-between items-center">
                   <span class="text-sm text-white/55">B2 · 60 хв</span>
-                  <span class="font-bold text-white">735 грн</span>
+                  <span
+                    class="font-bold text-white"
+                    data-price="individual_b2"
+                  ></span>
                 </div>
                 <div class="flex justify-between items-center">
                   <span class="text-sm text-white/55">C1 · 45 хв</span>
-                  <span class="font-bold text-white">850 грн</span>
+                  <span
+                    class="font-bold text-white"
+                    data-price="individual_c1"
+                  ></span>
                 </div>
               </div>
             </div>
@@ -886,7 +887,10 @@
             <div class="pt-5 border-t border-gray-100">
               <div class="flex justify-between items-center">
                 <span class="text-sm text-gray-400">30 хв · урок</span>
-                <span class="font-bold text-gray-900">388 грн</span>
+                <span
+                  class="font-bold text-gray-900"
+                  data-price="booster"
+                ></span>
               </div>
             </div>
           </div>
@@ -989,9 +993,11 @@
               class="flex items-center justify-between mt-6 pt-5 border-t border-gray-100"
             >
               <div>
-                <span class="text-2xl font-black" style="color: #1800ad"
-                  >971 грн</span
-                >
+                <span
+                  class="text-2xl font-black"
+                  style="color: #1800ad"
+                  data-price="university"
+                ></span>
                 <span class="text-sm text-gray-400 ml-1">/ 60 хв</span>
               </div>
               <a
@@ -1063,9 +1069,12 @@
               class="flex items-center justify-between mt-6 pt-5 border-t border-gray-100"
             >
               <div>
-                <span class="text-2xl font-black" style="color: #1800ad"
-                  >840 грн</span
-                >
+                <span
+                  class="text-2xl font-black"
+                  style="color: #1800ad"
+                  data-price="school"
+                ></span>
+
                 <span class="text-sm text-gray-400 ml-1">/ 60 хв</span>
               </div>
               <a
@@ -1107,9 +1116,11 @@
                 </p>
                 <div class="flex items-center gap-3 flex-wrap">
                   <div>
-                    <span class="text-2xl font-black" style="color: #1800ad"
-                      >989 грн</span
-                    >
+                    <span
+                      class="text-2xl font-black"
+                      style="color: #1800ad"
+                      data-price="professional"
+                    ></span>
                     <span class="text-sm text-gray-400 ml-1">/ 60 хв</span>
                   </div>
                   <span
@@ -1442,6 +1453,7 @@
         >
           <a
             target="_blank"
+            rel="noopener"
             href="https://t.me/ddeutschschule"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-bold text-base rounded-xl hover:bg-gray-100 transition-all shadow-2xl"
           >
@@ -1539,6 +1551,7 @@
       </div>
     </footer>
 
+    <script src="js/pricing.js"></script>
     <script src="js/main.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,24 @@
+/*
+ * Вхідний файл для Tailwind CSS v4.
+ *
+ * Як перебудувати CSS у майбутньому, якщо додав нові tailwind-класи:
+ *   1. npm install -D tailwindcss @tailwindcss/cli
+ *   2. npx @tailwindcss/cli -i ./src/tailwind.css -o ./css/tailwind.css --minify
+ *   3. (опціонально) видалити node_modules/ та package.json/package-lock.json
+ *
+ * Або разово підняти watch під час дизайн-сесії:
+ *   npx @tailwindcss/cli -i ./src/tailwind.css -o ./css/tailwind.css --watch
+ */
+
+@import 'tailwindcss';
+
+@source '../*.html';
+@source '../js/**/*.js';
+
+@theme {
+  --color-accent: #1800ad;
+  --color-accent-dark: #12007d;
+  --color-accent-soft: #eeebff;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}

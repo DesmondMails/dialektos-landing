@@ -205,6 +205,56 @@ body {
   border-radius: 50%;
 }
 
+.founder-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+  aspect-ratio: 4 / 5;
+  background: var(--color-accent-soft);
+  isolation: isolate;
+}
+
+.founder-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.founder-card:hover .founder-photo {
+  transform: scale(1.04);
+}
+
+.founder-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 16px 18px 14px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.35) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.founder-overlay-name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.founder-overlay-role {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 2px;
+}
+
 .process-connector-item {
   display: flex;
   flex-direction: column;

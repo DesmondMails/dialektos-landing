@@ -5,7 +5,7 @@
   //   ...
   //
   const PRICING_CSV_URL =
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vR249fZ-89XznaKFDdNBtPOzlf0sT-_fM1Ym99xCG4uVUF0WxrUDOaDEr_CKvuAn135OWSuE0vk1XFy/pub?gid=0&single=true&output=csv'
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRWvB2TiZ5taiS3VqUK0HMg07lTgzELtqhR8_XZ84efrghgZdY10B8x_Pgquum2YQsIOAOXcyO9SLP5/pub?gid=0&single=true&output=csv'
 
   const STORAGE_KEY = 'dialektos.pricing.v1'
 

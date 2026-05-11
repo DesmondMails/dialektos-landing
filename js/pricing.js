@@ -14,6 +14,7 @@ pair_a1_b1,375,грн
 pair_b2,505,грн
 individual_a1_b1,585,грн
 individual_b2,735,грн
+individual_a1_b1_45,450,грн
 individual_c1,850,грн
 booster,388,грн
 university,971,грн
